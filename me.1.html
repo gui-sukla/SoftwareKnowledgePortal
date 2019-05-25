@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="translated-ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>sukla</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+    <style>
+        html,body{
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 100px;
+}
+
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#app{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+}
+
+.header-main {
+    box-sizing: border-box;
+    height: 0.5rem;
+    font-size: .4rem;
+    text-align: center;
+    background-color: #566270;
+    color: #A593E0;
+}
+
+.section-author {
+    box-sizing: border-box;
+    box-shadow: 0 .01rem .1rem #000;
+    padding: 0 .1rem .05rem .1rem;
+    background:#A593E0;
+    position: relative;
+    z-index: 5;
+}
+
+.section-author::before {
+    content: ' ';
+    display: table;
+}
+
+.template-head-portrait {
+    display: block;
+    width: .4rem;
+    height: .4rem;
+    margin: .05rem auto;
+    background: #4592af;
+    border-radius: 50%;
+}
+
+.template-nickname {
+    box-sizing: border-box;
+    font-size: .18rem;
+    text-align: center;
+    color: #000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.template-motto {
+    box-sizing: border-box;
+    line-height: .30rem;
+    font-size: .18rem;
+    text-indent: .36rem;
+}
+
+.section-article-info {
+    box-sizing: border-box;
+    padding: .1rem 0 0;
+    background: #E0E3DA;
+    display: flex;
+    flex-flow: column;
+    flex: 1;
+}
+
+.title-article-info {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: .25rem;
+    height: .4rem;
+    line-height: .4rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.text-article-info {
+    box-sizing: border-box;
+    flex:1;
+    overflow-y: scroll;
+    font-size: .18rem;
+    text-indent: .36rem;
+    line-height: .30rem;
+    padding: 0 .1rem;
+}
+.btn-to-main {
+    box-sizing: border-box;
+    height: .4rem;
+    font-size: .3rem;
+    line-height: .4rem;
+    text-align: center;
+    background: #566270;
+    color: #A593E0;
+}
+
+
+.section-article-list {
+    box-sizing: border-box;
+    padding: 0 .1rem .1rem;
+    flex: 1;
+}
+
+.section-article-list::before {
+    content: ' ';
+    display: table;
+}
+
+.section-article-item {
+    margin: .1rem;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 10px rgba(0,0,0,.5);
+}
+
+.introduction-article {
+    box-sizing: border-box;
+    width: 100%;
+    height: .8rem;
+    
+}
+
+.beauty-bg0 {
+    background:
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.15) 30%, rgba(255,255,255,.3) 32%, rgba(255,255,255,0) 33%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.3) 13%, rgba(255,255,255,0) 14%) 0 0,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 17%, rgba(255,255,255,.43) 19%, rgba(255,255,255,0) 20%) 0 110px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) -130px -170px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.2) 11%, rgba(255,255,255,.4) 13%, rgba(255,255,255,0) 14%) 130px 370px,
+radial-gradient(rgba(255,255,255,0) 0, rgba(255,255,255,.1) 11%, rgba(255,255,255,.2) 13%, rgba(255,255,255,0) 14%) 0 0,
+linear-gradient(45deg, #343702 0%, #184500 20%, #187546 30%, #006782 40%, #0b1284 50%, #760ea1 60%, #83096e 70%, #840b2a 80%, #b13e12 90%, #e27412 100%);
+background-size: 470px 470px, 970px 970px, 410px 410px, 610px 610px, 530px 530px, 730px 730px, 100% 100%;
+background-color: #840b2a;
+}
+.beauty-bg1 {
+    background-color:white;
+background-image:
+radial-gradient(midnightblue 9px, transparent 10px),
+repeating-radial-gradient(midnightblue 0, midnightblue 4px, transparent 5px, transparent 20px, midnightblue 21px, midnightblue 25px, transparent 26px, transparent 50px);
+background-size: 30px 30px, 90px 90px;
+background-position: 0 0;
+}
+.beauty-bg2{
+    background:
+linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+linear-gradient(63deg, transparent 74%, #999 78%),
+linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+#444;
+background-size: 16px 48px;
+}
+.beauty-bg3{
+    background: #36c;
+background:
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+#36c;
+background-size: 15px 30px;
+}
+.beauty-bg4{
+    background:
+linear-gradient(45deg, #92baac 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #92baac 45px, transparent 45px,transparent 91px, #e1ebbd 91px, #e1ebbd 135px, transparent 135px),
+linear-gradient(-45deg, #92baac 23px, transparent 23px, transparent 68px,#92baac 68px,#92baac 113px,transparent 113px,transparent 158px,#92baac 158px);
+background-color:#e1ebbd;
+background-size: 128px 128px;
+}
+.beauty-bg5{
+    background:
+linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+linear-gradient(45deg, #ECEDDC 25%, transparent 25%);
+background-size: 100px 100px;
+background-color: #EC173A;
+}
+.beauty-bg6{
+    background:
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 50px 0,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 50px 0,
+radial-gradient(circle at 50% 59%, #D2CAAB 3%, #364E27 4%, #364E27 11%, rgba(54,78,39,0) 12%, rgba(54,78,39,0)) 0 50px,
+radial-gradient(circle at 50% 41%, #364E27 3%, #D2CAAB 4%, #D2CAAB 11%, rgba(210,202,171,0) 12%, rgba(210,202,171,0)) 0 50px,
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%),
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%),
+radial-gradient(circle at 100% 50%, #D2CAAB 16%, rgba(210,202,171,0) 17%) 50px 50px,
+radial-gradient(circle at 0% 50%, #364E27 16%, rgba(54,78,39,0) 17%) 50px 50px;
+background-color:#63773F;
+background-size:100px 100px;
+}
+.beauty-bg7{
+    background:
+linear-gradient(324deg, #232927 4%,   transparent 4%) -70px 43px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 30px 43px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 30px 43px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -70px 43px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -70px 23px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 30px 23px,
+
+linear-gradient(324deg, #232927 4%,   transparent 4%) -20px 93px,
+linear-gradient( 36deg, #232927 4%,   transparent 4%) 80px 93px,
+linear-gradient( 72deg, #e3d7bf 8.5%, transparent 8.5%) 80px 93px,
+linear-gradient(288deg, #e3d7bf 8.5%, transparent 8.5%) -20px 93px,
+linear-gradient(216deg, #e3d7bf 7.5%, transparent 7.5%) -20px 73px,
+linear-gradient(144deg, #e3d7bf 7.5%, transparent 7.5%) 80px 73px;
+background-color: #232927;
+background-size: 100px 100px;
+}
+.beauty-bg8{
+    background-color:#001;
+background-image: radial-gradient(white 15%, transparent 16%),
+radial-gradient(white 15%, transparent 16%);
+background-size: 60px 60px;
+background-position: 0 0, 30px 30px;
+}
+.beauty-bg9{
+    
+background: linear-gradient(#ffffff 50%, rgba(255,255,255,0) 0) 0 0,
+radial-gradient(circle closest-side, #FFFFFF 53%, rgba(255,255,255,0) 0) 0 0,
+radial-gradient(circle closest-side, #FFFFFF 50%, rgba(255,255,255,0) 0) 55px 0 #48B;
+background-size: 110px 200px;
+background-repeat: repeat-x;
+}
+
+
+
+.title-Introduction-article {
+    box-sizing: border-box;
+    width: 100%;
+    height: .3rem;
+    font-size: .2rem;
+    line-height: .3rem;
+    padding-left: .1rem;
+    background-color: #566270;
+    color: #A593E0;
+}
+    </style>
+</head>
+
+<body>
+    <div id="app" >
+        <header-main class='header-main'></header-main>
+        <section-author class='section-author' :jpgsrc='jpgMe'></section-author>
+        <section-article-info 
+        class='section-article-info'
+        @hide-article='hideArticle'
+        :article='article'
+         v-if='articleInfoShow'></section-article-info>
+         <div 
+         class="section-article-list"
+         :class = 'beautyBg()'
+         v-if='!articleInfoShow'
+         >
+            <ul>
+                <li
+                  is='section-article-item'
+                  class='section-article-item '
+                  :class = 'beautyBg()'
+                  v-for='(article, index) in articles'
+                  :key='index'
+                  :article='article'
+                  :articleid='index'
+                  @show-article='showArticle'
+                ></li>
+            </ul>
+         </div>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+
+    <script>
+            (function (doc, win) {
+    var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+      var clientWidth = docEl.clientWidth;
+      if (!clientWidth) return;
+        if (clientWidth > 750) {
+            docEl.style.fontSize = '100px';// 修正一下大于750的字体大小为100px
+        } else {
+            docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+        }
+      /*
+       * 100 -> html,body {  font-size:100px; }
+       * 750 -> 此处以 iPhone6 两倍设计稿 宽度750px 布局页面
+       * 根据具体情况改变这两个数值
+       */
+    };
+
+  if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+
+
+Vue.component('header-main',{
+    template:`<header>Sukla</header>`
+})
+Vue.component('section-author',{
+    props : ['jpgsrc'],
+    template:`
+    <div>
+      <img class='template-head-portrait' :src='"data:image/jpg;base64,"+jpgsrc'/>
+      <div class='template-nickname'>Sukla</div>
+      <div class='template-motto'>知易行难，先知后行，则纸上谈兵，先行后知，则不知其可，唯知行合一，且行且知！</div>
+    </div>
+    `
+})
+
+Vue.component('section-article-info',{
+    props: ['article'],
+    template:`
+        <div>
+            <div class='title-article-info'>{{ article.title }}</div>
+            <div class='text-article-info'>
+                {{ article.content }}
+            </div>
+            <div class='btn-to-main' @click='$emit("hide-article")'>↑↑↑↑↑</div>
+        </div>
+    `
+})
+
+Vue.component('section-article-item',{
+    props:['article', 'index'],
+    template:`
+    <li @click='$emit("show-article", article)'>
+        <div class='introduction-article'></div>
+        <div class='title-Introduction-article'>{{ article.title }}</div>
+    </li>
+    `
+})
+
+var dataSource = {
+    articles: [
+        {
+            title: 'JavaScript传送门',
+            src: `https://github.com/gui-sukla/JavaScriptPortal`
+        }
+    ],
+    jpg : `/9j/4AAQSkZJRgABAQEASABIAAD/4QQmRXhpZgAATU0AKgAAAAgADQEAAAQAAAABAAAIcAEBAAQA
+AAABAAAPAAEPAAIAAAAHAAAAqgEQAAIAAAAFAAAAsgESAAMAAAABAAEAAAEaAAUAAAABAAAAuAEb
+AAUAAAABAAAAwAEoAAMAAAABAAIAAAExAAIAAABAAAAAyAEyAAIAAAAUAAABCAITAAMAAAABAAEA
+AIdpAAQAAAABAAABHIglAAQAAAABAAADBAAAA+RYaWFvbWkAAE1JIDYAAAAAAEgAAAABAAAASAAA
+AAFzYWdpdC11c2VyIDguMC4wIE9QUjEuMTcwNjIzLjAyNyBWMTAuMC4yLjAuT0NBQ05GSCByZWxl
+YXNlLWtleXMAMjAxOTowNDoyMSAxODo1ODowNAAAHIKaAAUAAAABAAACcoKdAAUAAAABAAACeogi
+AAMAAAABAAAAAIgnAAMAAAABBKkAAJAAAAcAAAAEMDIyMJADAAIAAAAUAAACgpAEAAIAAAAUAAAC
+lpEBAAcAAAAEAQIDAJIBAAoAAAABAAACqpICAAUAAAABAAACspIDAAoAAAABAAACupIHAAMAAAAB
+AAIAAJIJAAMAAAABABAAAJIKAAUAAAABAAACwpKQAAIAAAAHAAACypKRAAIAAAAHAAAC0pKSAAIA
+AAAHAAAC2qAAAAcAAAAEMDEwMKABAAMAAAABAAEAAKACAAQAAAABAAAPAKADAAQAAAABAAAIcKAF
+AAQAAAABAAAC4qIXAAMAAAABAAIAAKMBAAcAAAABAQAAAKQCAAMAAAABAAAAAKQDAAMAAAABAAAA
+AKQFAAMAAAABABsAAKQGAAMAAAABAAAAAAAAAAAAAAABAAAAEQAAANwAAABkMjAxOTowNDoyMSAx
+ODo1ODowNAAyMDE5OjA0OjIxIDE4OjU4OjA0AAAAD9oAAAPoAAAA4wAAAGT///82AAAAZAAADEQA
+AAPoNTk4MDUzAAA1OTgwNTMAADU5ODA1MwAAAAIAAQACAAAABFI5OAAAAgAHAAAABDAxMDAAAAAA
+AAAAAAAJAAEAAgAAAAJOAAAAAAIABQAAAAMAAAN2AAMAAgAAAAJFAAAAAAQABQAAAAMAAAOOAAUA
+AQAAAAEAAAAAAAYABQAAAAEAAAOmAAcABQAAAAMAAAOuABsAAgAAABAAAAPGAB0AAgAAAAsAAAPW
+AAAAAAAAACgAAAABAAAACQAAAAEAB/JHAAAnEAAAAHQAAAABAAAADwAAAAEAB7twAAAnEAAAAAAA
+AAPoAAAACgAAAAEAAAA6AAAAAQAAAAEAAAABQVNDSUkAAABORVRXT1JLADIwMTk6MDQ6MjEAAAAA
+AAMBGgAFAAAAAQAABA4BGwAFAAAAAQAABBYBKAADAAAAAQACAAAAAAAAAAAASAAAAAEAAABIAAAA
+Af/gABBKRklGAAEBAAABAAEAAP/bAEMAAgEBAgEBAgICAgICAgIDBQMDAwMDBgQEAwUHBgcHBwYH
+BwgJCwkICAoIBwcKDQoKCwwMDAwHCQ4PDQwOCwwMDP/bAEMBAgICAwMDBgMDBgwIBwgMDAwMDAwM
+DAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDP/AABEIACgAKAMBIgAC
+EQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAA
+AX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4
+OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaan
+qKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQAD
+AQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEG
+EkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpT
+VFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4
+ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP22gURs
+6MThl4yPw4r4T/4KW/8ABRPVv2f/ALR4d8Lw3VxNDE9nqV8Q0bee4CIIo49rM6yMi7WkGQ4+UqWl
+XnP+C3v/AAVI8T/sMeHLfwl4NvNMt/EHiW3LNdeYLjUNLgYSK0yIysiZYKEL7jktgrtyPxq+E/7c
+PiTT9e17xLq+qahql4xMlpbeYZhbStv2N85LeWrSFm5LO7kux3tuyo0VVfvbHoU6bgud9dj7oj/b
+D/aY1D7Po+k61e3epXMf9r3sm03G+WPg2cBl3sGKKVLFiuSqktsLH1/9k7/gsr408ZeNNY8C+LvC
+P/CRro92+n3upWszx+Q67gUZ1VwS3luVDpvbdjcW4r8/PgP+1l8RP2nvihpPhWzubqO1maV78WLB
+Lye0kl33EUWeXkd3GAW5I/h+Zq+/P2/v+CPmm6P8DtN1H4XabqWj+PJNPhi0ubSpHhbWLoBXksrl
+BjzhcqmULgMs8cXzIhkVufFV8NTmqfL6tdD1MPg6tWl7STV3su9tX+B9weBPibovx98Nr4k8P3ct
+5YyPLZz2+3ElrOhBeJ1IyrjbyORxxxRXw9/wQB1zxx4h1P4x2evWGsW+n6PBolvd3F/AYjc6qYJH
+Y7GAYSC1aBX7kLE7fNISSvOrU1Gdkc8pWdjiP+Dr34d3mi2/w58UWtjcrpV5JPp+oXqkiF7tt8kM
+eAMF9kUzMzclViAOFxX5Z/sq/Axfj141j0uzuGguI4HuLgtH5owD8oVCRnLMo5PYn2P9Un7Uf7Nn
+hr9sL9nnxV8N/GVot1pPiqwe0eRADJYS4Pk3cJbIEsL7JFJ6lOcgkH8H/Df7KNj/AMEkv2k28U6x
+qmveKPD+i6d9j1+FNMQ3GnTtdCIytGHw9tujLbk3MgeMkOrh67sVinTounDST29TqyDCrEV1UqK9
+Onbm1tp37279hPhD+xb/AMM+fHzwfDpfjPxJb+MNUuYbDQLXQ9NimkWRw25rqaZTDGsh8zIYBQoY
+n5QcfbP7ZP7SMmo/swW/gbxx48tNZ8fapKNRTw5rcUtqksBhLQx389pHmB3baxhIVhGwZ9iyRl/n
+L9qT/gtv8LdQ8ET6d8HfAc3/AAmGqxNFN4l1WyW2hsU4z5MOWaZyMnMoRUxkK5Py/OX7PHg34kft
+jfFCTTdE0PX/AIi+K54WubiC2Klbe3LZJkkk2wW8bOxLPIymR2zu3ZrPL8pqV/3mMbt2va/rtY9H
+OOIKFD3Mugk73u0nbvZtu9/RH71/so2mk2v7Mfh1tEg8P29hcI0wbQLP7La7zcPu+UYO5WUo5bDZ
+U7lXOwFfG3/BE7S/F3wW1j43fDnxfo2seHtW8P3eh3TaTqELQvYJPFfDzckhJFZYIlEsTOrJbp85
+bIorPE0VSqOne9j5xVXVbq93c/TCzb7RI0/2maaG6IkhV8KsKlFwFwASCct8xJyxHQADwX9tP9jL
+Tf2n/B95e6Nd6TZ+KFbynk1Kya7stVs+VudPuYQ8ZYPCZEVtwZMgZA5UoratGMoWkrnPhMTVoVVU
+pSae2nbt6H8/f7T3/BMv4j/AK21jxNYeH49S8B28zTRXWl6l/ababbMCytMGSOfy1UAGVotqnAZi
+Tubqf+CS3/BS4f8ABOL4t+IL/V/C9x4n8P8Ai60hstSWzlSO/tfKcskkQchJB8x3IxXOBhlOclFd
+WT4upiKP7z0PUz/L6NCry09nqfqX/wAEzv2jdX/4KIfHT4ufGJfC194Z8IrZaP4O0NL65E1xO9v9
+qurg7lXblRc2jFF4BdPnOMAoorlx1vbM5aUYwgkkf//Z
+`
+}
+var vm = new Vue({
+    el: '#app',
+    data:{
+        articleInfoShow: false,
+        article: null,
+        articles : dataSource.articles,
+        jpgMe : dataSource.jpg
+
+    },
+    methods: {
+        showArticle: function (article) {
+            // this.article = article;
+            // this.articleInfoShow = true;
+            console.log(article.src);
+            window.location.href = article.src;
+        },
+        hideArticle: function () {
+            this.articleInfoShow = false;
+        },
+        beautyBg: function () {
+            return `beauty-bg${Math.floor(10*Math.random())}`
+        }   
+    }
+})
+    </script>
+</body>
+
+</html>
