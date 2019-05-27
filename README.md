@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <a href="https://github.com/gui-sukla/SoftwareKnowledgePortal"><img src="software.png" alt="开发的一些概念" width=200"></a>
+  <a href="https://github.com/gui-sukla/SoftwareKnowledgePortal/blob/master/README.md"><img src="software.png" alt="开发的一些概念" width=200"></a>
   <br>
     <br>
   接触到的开发的一些概念
