@@ -20,7 +20,8 @@
 
 ## 目录
 
-1. :book: [JS传送门 JavaScriptPortal](https://github.com/gui-sukla/JavaScriptPortal)
+1. :book: [JS传送门 JavaScriptPortal](https://github.com/gui-sukla/JavaScriptPortal/blob/master/README.md)
+2. :book: [EXT传送门 EXTPortal](https://github.com/gui-sukla/EXTPortal/blob/master/README.md)
 
 
 ---
